@@ -41,7 +41,7 @@ export class GitService {
         },
         error=>{
           alert("Problem detected")
-          reject(error)
+          reject()
         })
       })
       return promise

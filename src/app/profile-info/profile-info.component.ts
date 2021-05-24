@@ -13,7 +13,7 @@ export class ProfileInfoComponent implements OnInit {
 searchUsers = true;
   user!:User;
   repo: any =[]; 
-  userName!:string;
+  userName!:string; 
   constructor(private gitUserService:GitService,private gitRepoService:GitService, private router:Router) { }
   
   search(userName:any){
