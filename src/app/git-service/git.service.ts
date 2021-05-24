@@ -34,7 +34,7 @@ export class GitService {
 
       }
       let promise = new Promise<void>((resolve,reject) => {
-        this.http.get<ApiResponse>('https://api.github.com/users/'+ userName+ '?access_token='+environment.access_key).toPromise().then((response)=>{
+        this.http.get<ApiResponse>('https://api.github.com/users/'+ userName+ '?access_token='+this.accesstoken).toPromise().then((response)=>{
           this.user = response;
           console.log(this.user)
           resolve()
@@ -58,7 +58,7 @@ export class GitService {
         forks:number
       }
       let promise = new Promise<void>((resolve,reject)=>{
-        this.http.get<ApiResponse>('https://api.github.com/users/'+userName+'/repos?access_token='+environment.access_key).toPromise().then((response)=>{
+        this.http.get<ApiResponse>('https://api.github.com/users/'+userName+'/repos?access_token='+this.accesstoken).toPromise().then((response)=>{
           this.repo = response
           
           console.log(this.repo)
