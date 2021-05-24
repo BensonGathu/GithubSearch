@@ -1,1 +1,9 @@
-<p>profile-info-repo works!</p>
+<div>
+    <app-top-bar (userUpdated)="search($event)"></app-top-bar>
+</div>
+<div class="container">
+<div *ngFor="let repos of repo">
+    <b>{{repos.name}}:</b>
+    <h6>{{repos.description}}</h6>
+</div>
+</div>

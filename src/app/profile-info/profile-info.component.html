@@ -1,1 +1,81 @@
-<p>profile-info works!</p>
+
+
+  <div class="m-x-auto">
+
+    <div class="starter-template text-xs-center">
+      <app-top-bar (userUpdated)= "search($event)"></app-top-bar>
+
+    </div>  
+  
+  </div> 
+<div class="container">
+  <div class="card" *ngIf="searchUsers">
+    <h4 class="card-header">{{user.login}}</h4><br><br>
+    <div class="card-block">
+      <div class="row">
+        <div class="col-xl-4 m-b-1">
+          <img src="{{user.avatar_url}}" class="profile-img img-thumbnail m-b-1" />
+          <a class="btn btn-sm btn-outline-primary btn-block m-t-1" href="{{user.html_url}}"
+            target="_blank">View
+            Profile</a>
+        </div>
+
+        
+        
+          <ul class="list-group">
+            <li class="list-group-item" appHighlight><b>Username: </b>{{user.login}}</li>
+            <li class="list-group-item" appHighlight><b>Location: </b> {{user.location}}</li>
+            <li class="list-group-item" appHighlight><b>E-Mail: </b> {{user.email}}</li>
+            <li class="list-group-item" appHighlight><b>Date Joined: </b> {{user.created_at|date}}
+              <br>
+              <span class="blockquote-footer" appUnderline>{{user.created_at | date}}</span>
+            </li>
+          </ul>
+        
+        
+      </div><br>
+
+      <div class="status m-t-1">
+
+        <span class="p-a-05 bg-info text-xs-center"> {{user.public_repos}} Public Repos </span>&nbsp;
+        <span class="p-a-05 bg-warning m-t-1 text-xs-center"> {{user.followers}} Followers </span>&nbsp;
+        <span class="p-a-05 bg-secondary m-t-1 text-xs-center"> {{user.following}} Followings </span>
+
+      </div>
+
+    </div>
+    <div class=" card bg-light text-dark ">
+      <h2 class="text-center" appUnderline>REPOSITORIES</h2>
+      <div class="githubRepos">
+        <div class="label " *ngFor="let githubRepo of repo">
+          <div class="card-body">
+            <h4 class="card-title h4" appUnderline>Repo Name: <span class="rep"><b>{{githubRepo.name}}</b></span> </h4>
+            <div class="card-text">
+              <hr>
+              <h5 class="" appUnderline>Description:<span> {{githubRepo.description}}</span></h5>
+              <div class="card-subtitle mb-2" appUnderline>Language: <span> {{githubRepo.language}}</span></div>
+              <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span>
+                <br>
+                <!-- <span class="blockquote-footer">{{githubRepo.created_at | date}}</span></div> -->
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group" appUnderline>Watchers:
+              <button class="btn btn-sm btn-primary"><span class="forks">{{githubRepo.watchers_count}}</span></button>
+            </div>&nbsp;&nbsp;
+            <div class="btn-group" appUnderline>Forks:
+              <button class="btn btn-sm btn-outline-success">
+                <span class="forks">{{githubRepo.forks}}</span></button>
+            </div>
+            <div class="btn-group float-right">
+              <button class="btn btn-outline-primary" id="visit"><a href="{{githubRepo.html_url}}" target="blank"
+                  class="card-link">View</a> </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+  </div>
+</div>
