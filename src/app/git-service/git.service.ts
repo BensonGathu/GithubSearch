@@ -10,7 +10,7 @@ import {Repo} from '../repo';
 export class GitService {
   user:User;
   repo: Repo;
-  accesstoken :string = environment.access_key
+  accesstoken :string = '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'
 
   constructor(private http:HttpClient) {
     this.user = new User("","","","","","",0,0,0,new Date());
