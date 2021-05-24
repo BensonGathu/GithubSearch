@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  access_key :"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"
+  access_key :"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"
 };
 
 /*
