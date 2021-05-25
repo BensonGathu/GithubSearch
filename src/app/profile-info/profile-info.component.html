@@ -28,7 +28,7 @@
             <li class="list-group-item" appHighlight><b>E-Mail: </b> {{user.email}}</li>
             <li class="list-group-item" appHighlight><b>Date Joined: </b> {{user.created_at|date}}
               <br>
-              <span class="blockquote-footer" appUnderline>{{user.created_at | date}}</span>
+              <!-- <span class="blockquote-footer" appUnderline>{{user.created_at}}</span>-->
             </li>
           </ul>
         
@@ -56,7 +56,7 @@
               <div class="card-subtitle mb-2" appUnderline>Language: <span> {{githubRepo.language}}</span></div>
               <div class="card-subtitle mb-2">Created: <span id="created">{{githubRepo.created_at|date }}</span>
                 <br>
-                <!-- <span class="blockquote-footer">{{githubRepo.created_at | date}}</span></div> -->
+                <span class="blockquote-footer">{{githubRepo.created_at | dateCount}}</span></div>
             </div>
           </div>
           <div class="card-footer">

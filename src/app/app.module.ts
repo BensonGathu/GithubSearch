@@ -11,6 +11,7 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { ProfileInfoImageComponent } from './profile-info-image/profile-info-image.component';
 import { ProfileInfoRepoComponent } from './profile-info-repo/profile-info-repo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ProfileInfoComponent,
     ProfileInfoImageComponent,
     ProfileInfoRepoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
